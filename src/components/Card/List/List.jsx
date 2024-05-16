@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 import './List.module.css'
-
-
+import '../Form/Form';
 
 {/* idade, estado, logradouro */}
 
-function List() {
+{/* https://viacep.com.br/ws/08472721/json/ */}
 
-    const cidade = 'São Paulo'
-    const estado = 'SP'
-    const logradouro = 'Rua Barrão barroso do amazonas'
+function List({ CEP }) {
+
+    console.log(CEP)
 
     return (
         <>
@@ -23,9 +22,9 @@ function List() {
             </thead>
             <tbody>
                 <tr>
-                    <td>{logradouro}</td>
-                    <td>{cidade}</td>
-                    <td>{estado}</td>
+                    <td>Indefinido</td>
+                    <td>Indefinido</td>
+                    <td>Indefinido</td>
                 </tr>
             </tbody>
         </table>
@@ -34,9 +33,7 @@ function List() {
 }
 
 List.propTypes = {
-    logradouro: PropTypes.string,
-    cidade: PropTypes.string,
-    estado: PropTypes.string
+    CEP: PropTypes.string
 }
 
 export default List;

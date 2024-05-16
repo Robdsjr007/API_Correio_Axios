@@ -1,19 +1,18 @@
-import { useState } from "react";
 import Form from "./Form/Form";
+import PropTypes from "prop-types";
 
-function Card() {
-    const [CEP, setCEP] = useState()
-
-    const enviarCEP = (e) => {
-        e.preventDefault();
-        console.log(CEP)
-    }
+function Card({ setCEP, event }) {
 
     return (
         <div className="Card">
-            <Form setCEP={setCEP} event={enviarCEP}/>            
+            <Form setCEP={setCEP} event={event}/>            
         </div>
     );
+}
+
+Card.propTypes = {
+    setCEP: PropTypes.func,
+    event: PropTypes.func
 }
 
 export default Card;
